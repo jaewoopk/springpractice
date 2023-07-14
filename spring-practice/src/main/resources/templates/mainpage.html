@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}">Title</title>
+</head>
+<body>
+    <h1 th:text="${title}">Title</h1>
+    <h2>Projects</h2>
+    <ul>
+        <li th:each="project : ${projects}">
+            <h3 th:text="${project.name}">Project Name</h3>
+            <p th:text="${project.description}">Project Description</p>
+            <a th:href="${project.githubLink}">Github</a>
+            <a th:href="${project.demoLink}">Demo</a>
+        </li>
+    </ul>
+    <h2>Contact</h2>
+    <p>Let's work together. Email: <span th:text="${email}">Email</span></p>
+    <a th:href="'mailto:' + ${email}">Contact me</a>
+</body>
+</html>
